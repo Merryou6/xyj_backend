@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'xunyiji.apps.XunyijiConfig',
     'rest_framework',
     'apps.authentication',
 ]
@@ -156,8 +155,8 @@ SIMPLE_JWT = {
 }
 
 # 阿里云短信服务配置
-ALIYUN_ACCESS_KEY_ID = 'AccessKeyId'
-ALIYUN_ACCESS_KEY_SECRET = 'AccessKeySecret'
+ALIYUN_ACCESS_KEY_ID = ''
+ALIYUN_ACCESS_KEY_SECRET = ''
 # 短信签名和模板代码（根据你实际申请的值填写）
 ALIYUN_SMS_SIGN_NAME = '速通互联验证码'
 ALIYUN_SMS_TEMPLATE_CODE = '100001'
