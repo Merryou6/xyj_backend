@@ -43,13 +43,13 @@ class AliSmsService:
         """
         request = dypnsapi_models.CheckSmsVerifyCodeRequest(
             phone_number=phone_number,
-            code=code
+            verify_code=code
         )
         runtime = util_models.RuntimeOptions()
         try:
             resp = self.client.check_sms_verify_code_with_options(request, runtime)
             # 根据阿里云文档，校验成功时 resp.body.code 为 "OK"，且 resp.body.verify_result 可能为 true
-            if resp.body.code == 'OK' and resp.body.verify_result:
+            if resp.body.code == 'OK' and resp.body.success:
                 return True, "验证码正确"
             else:
                 return False, resp.body.message or "验证码错误"
